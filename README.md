@@ -1,5 +1,7 @@
 # Dowód Rejestracyjny Pojazdu - decompression
 
+[![Build Status](https://secure.travis-ci.org/dex4er/drpdecompress.svg)](http://travis-ci.org/dex4er/drpdecompress)
+
 This is command line utility to decompress data for Dowód Rejestracyjny Pojazdu
 (vehicle registration certificate in Poland).
 
