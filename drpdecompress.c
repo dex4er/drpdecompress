@@ -21,6 +21,7 @@
 #include <ucl/ucl.h>
 
 #define MAX_BUFFER 10240
+#define SKIP_BYTES 4
 
 int main () {
     unsigned char input[MAX_BUFFER], output[MAX_BUFFER];
@@ -28,14 +29,18 @@ int main () {
     ucl_uint sizein, sizeout;
 
     if (!(sizein = fread(input, 1, sizeof input, stdin))) {
-        fprintf(stderr, "Cannot read file\n");
+        fprintf(stderr, "Cannot read from input\n");
+        exit(1);
+    }
+    if (sizein < SKIP_BYTES) {
+        fprintf(stderr, "Input is not valid\n");
         exit(1);
     }
 
-    ucl_nrv2e_decompress_8(input + 4, sizein - 4, output, &sizeout, NULL);
+    ucl_nrv2e_decompress_8(input + SKIP_BYTES, sizein - SKIP_BYTES, output, &sizeout, NULL);
 
     if (!(fwrite(output, 1, sizeout, stdout))) {
-        fprintf(stderr, "Cannot write file\n");
+        fprintf(stderr, "Cannot write to output\n");
         exit(1);
     }
 
