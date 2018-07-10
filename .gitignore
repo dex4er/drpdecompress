@@ -1,0 +1,11 @@
+*.exe
+*.o
+*.out
+
+drpdecompress
+output.txt
+
+*.bak
+*~
+
+.vscode
