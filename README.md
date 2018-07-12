@@ -13,7 +13,8 @@ See: <https://pl.wikipedia.org/wiki/Dow%C3%B3d_rejestracyjny_pojazdu>
 drpdecompress < input.txt > output.txt
 ```
 
-Decode data from Dowód Rejestracyjny Pojazdów document with Aztec 2D scanner to get Base64 encoded text string.
+Use Aztec 2D scanner to decode data from Dowód Rejestracyjny Pojazdów document
+and save it in a text file.
 
 Example image:
 
@@ -48,9 +49,26 @@ make
 make install
 ```
 
+### Windows/ Cygwin
+
+Download Cygwin setup [setup-x86_64.exe](http://www.cygwin.com/setup-x86_64.exe) and install packages:
+
+* gcc-core
+* make
+* ucl
+
+Run Cygwin shell and:
+
+```sh
+make
+make install
+```
+
 ## Technical details
 
-The registry document is a text file encoded as UCS-2LE (2-bytes Windows Unicode format), compressed with NRV2E algorithm and encoded with Base64.
+The registry document is a text file encoded as UCS-2LE (2-bytes Windows Unicode
+format), compressed with NRV2E (8-bit variant) algorithm and encoded with
+Base64.
 
 ## Output format
 
