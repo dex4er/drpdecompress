@@ -13,6 +13,12 @@ See: <https://pl.wikipedia.org/wiki/Dow%C3%B3d_rejestracyjny_pojazdu>
 drpdecompress < input.txt > output.txt
 ```
 
+or
+
+```sh
+drpdecompress input.txt output.txt
+```
+
 Use Aztec 2D scanner to decode data from Dowód Rejestracyjny Pojazdów document
 and save it in a text file.
 
@@ -51,7 +57,8 @@ make install
 
 ### Windows/ Cygwin
 
-Download Cygwin setup [setup-x86_64.exe](http://www.cygwin.com/setup-x86_64.exe) and install packages:
+Download Cygwin setup [setup-x86_64.exe](http://www.cygwin.com/setup-x86_64.exe)
+and install packages:
 
 * gcc-core
 * make
