@@ -103,7 +103,7 @@ The list of fields (in Polish language):
 | 17 | C.1.1                      | JAN                       | imię posiadacza dowodu rejestracyjnego
 | 18 | C.1.1                      | KOWALSKI                  | nazwisko posiadacza dowodu rejestracyjnego
 | 19 | C.1.1                      |                           | nazwa posiadacza dowodu rejestracyjnego
-| 20 | C.1.2                      | 82091711022               | numer PESEL lub REGON dowodu rejestracyjnego
+| 20 | C.1.2                      | 82091711022               | numer PESEL lub REGON posiadacza dowodu rejestracyjnego
 | 21 | C.1.3                      | 02-517                    | kod pocztowy posiadacza dowodu rejestracyjnego
 | 22 | C.1.3                      | WARSZAWA                  | miejscowość posiadacza dowodu rejestracyjnego
 | 23 | C.1.3                      |                           | gmina posiadacza dowodu rejestracyjnego
