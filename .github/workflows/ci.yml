@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: trunk-io/trunk-action@v1
+        with:
+          check-mode: all
+
+  test:
+    runs-on: ubuntu-22.04
+
+    strategy:
+      fail-fast: false
+      matrix:
+        compiler:
+          - clang
+          - gcc
+        standard:
+          - c89
+          - c99
+          - c11
+          - c17
+          - c2x
+
+    steps:
+      - uses: actions/checkout@v3
+      - run: ${{ matrix.compiler }} --version
+      - run: make CC=${{ matrix.compiler }} CFLAGS="-Wall -g -O2 -Wall -Werror" EXTRA_CFLAGS="-std=${{ matrix.standard }}"
+      - run: cat input.txt | base64 --decode | ./drpdecompress | iconv -f UCS-2LE -t UTF-8//TRANSLIT > output.txt
+      - run: grep '^XXC1|AAA0007046|.*|009002001|$' output.txt
