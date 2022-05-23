@@ -32,6 +32,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - run: sudo apt-get -q -y install --no-install-recommends build-essential libucl-dev ${{ matrix.compiler }}
       - run: ${{ matrix.compiler }} --version
       - run: make CC=${{ matrix.compiler }} CFLAGS="-Wall -g -O2 -Wall -Werror" EXTRA_CFLAGS="-std=${{ matrix.standard }}"
       - run: cat input.txt | base64 --decode | ./drpdecompress | iconv -f UCS-2LE -t UTF-8//TRANSLIT > output.txt
