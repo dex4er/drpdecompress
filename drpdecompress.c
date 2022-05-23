@@ -14,17 +14,15 @@
     GNU General Public License for more details.
 */
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include <ucl/ucl.h>
 
 #define MAX_BUFFER 10240
 #define SKIP_BYTES 4
 
-int main (int argc, char *argv[])  {
+int main(int argc, char *argv[]) {
     unsigned char *input, *output;
     FILE *fin, *fout;
     ucl_uint sizein, sizeout;
@@ -62,7 +60,7 @@ int main (int argc, char *argv[])  {
         exit(1);
     }
 
-    if (!(sizein = fread(input, 1, MAX_BUFFER-1, fin))) {
+    if (!(sizein = fread(input, 1, MAX_BUFFER - 1, fin))) {
         fprintf(stderr, "Cannot read from input\n");
         exit(1);
     }
